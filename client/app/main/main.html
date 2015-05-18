@@ -1,0 +1,41 @@
+<!--<div ng-include="'components/navbar/navbar.html'"></div>-->
+
+<!--<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>-->
+
+<div class="container">
+  <div class="row clearfix" ng-repeat="machine in listAPI">
+    <div class="col-md-3 column">
+      <img alt="140x140" src="{{machine.imagen}}" class="img-rounded">
+    </div>
+    <div class="col-md-6 column">
+      <table class="table table-hover table-condensed">
+        <tr class="active">
+          <td><h4>{{machine.nombre}}</h4></td>
+        </tr>
+        <tr>
+          <td><h5>{{machine.precio}}</h5></td>
+        </tr>
+        <tr>
+          <td><h6>{{machine.disponibilidad}}</h6></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-3 column">
+      <a type="button" class="btn btn-success btn-block" href="#myModal-2">Ver-Detalle</a>
+    </div>
+  </div>
+</div>
+
+<!--<footer class="footer">
+  <div class="container">
+      <p>Angular Fullstack v2.0.13 |
+        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+  </div>
+</footer>-->
