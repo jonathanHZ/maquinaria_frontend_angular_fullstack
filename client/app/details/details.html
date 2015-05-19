@@ -1,5 +1,3 @@
-<!--<div ng-include="'components/navbar/navbar.html'"></div>-->
-
 <header class="hero-unit" id="banner"  >
   <div class="container">
     <div class="row clearfix">
@@ -16,33 +14,60 @@
 <div class="container">
   <div class="row clearfix">
     <div class="col-md-12">
-      <h2 class="text-info">Listado de Maquinaria</h2>
+      <h2 class="header text-info"> Detalle De Maquinaria</h2>
     </div>
   </div>
-
-  <div class="row clearfix thumbnail" ng-repeat="machine in listAPI">
-    <div class="col-md-3 column">
+  <div ng-show="success=false" class="row alert alert-success text-center" role="alert">
+    <div class="col-md-offset-2 col-md-6 vertical-center">
+      <span><h2>La maquina ha sido Borrada</h2></span>
+    </div>
+    <div  class="col-md-4 vertical-center">
+      <a href="/" class="btn btn-default btn-lg close-button text-right">
+        <span>X</span>
+      </a>
+    </div>
+  </div>
+  <div ng-show="error=false" class="row alert alert-warning text-center" role="alert">
+    <div class="col-md-offset-2 col-md-6 vertical-center">
+      <span><h2>La maquina no ha sido Borrada</h2></span>
+    </div>
+    <div class="col-md-4 vertical-center">
+      <a href="/" class="btn btn-default btn-lg close-button text-right">
+        <span>X</span>
+      </a>
+    </div>
+  </div>
+  <div class="row clearfix thumbnail" ng-repeat="machine in listAPIid">
+    <div class="col-md-6 column">
       <img class="col-md-12" src="{{machine.imagen}}" class="img-rounded">
     </div>
-    <div class="col-md-6 column vertical-center">
-      <table class="table table-hover table-condensed  text-info vertical-center">
+    <div class="col-md-6 column">
+      <table class="table table-hover table-condensed text-info">
         <tr class="active warning">
           <td><h4>{{machine.nombre}}</h4></td>
         </tr>
         <tr>
-          <td><h5>Precio: ${{machine.precioDescuento}}</h5></td>
+          <td><h5>Precio anterior: ${{machine.precio}}</h5></td>
+        </tr>
+        <tr>
+          <td><h5>Ahorra: ${{ahorro}}</h5></td>
+        </tr>
+        <tr>
+          <td><h5>Precio actual: ${{machine.precioDescuento}}</h5></td>
         </tr>
         <tr>
           <td><h6>Disponible: {{machine.disponibilidad}}</h6></td>
         </tr>
+        <tr>
+          <td><h5>{{machine.descripcion}}</h5></td>
+        </tr>
       </table>
-    </div>
-    <div class="col-md-3 column">
-      <a type="button" class="btn btn-warning btn-block" href="/details" ng-click="sendId(machine.idmaquina)">Ver-Detalle</a>
+      <div class="col-md-12 column">
+        <a type="button" class="btn btn-warning btn-block" ng-click="delete()">Eliminar Maquina</a>
+      </div>
     </div>
   </div>
 </div>
-
 <footer class="footer">
   <div class="container row clearfix" id="contact">
     <div class="col-md-12 column">
@@ -62,5 +87,6 @@
       </ul>
     </div>
   </div>
-</div>
+  </div>
 </footer>
+

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('peticionesApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, myService) {
     $scope.awesomeThings = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
@@ -9,8 +9,11 @@ angular.module('peticionesApp')
     });
 
     $http.get('http://localhost:8080/maquinaria/maquinas/listAPI').success(function(data) {
-
       $scope.listAPI = data;
-      console.log($scope.listAPI);
     });
+
+    $scope.sendId = function(id){
+      myService.addId(id);
+    }
+
   });
