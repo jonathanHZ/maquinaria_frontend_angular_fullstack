@@ -50,7 +50,7 @@
           <td><h5>Precio anterior: ${{machine.precio}}</h5></td>
         </tr>
         <tr>
-          <td><h5>Ahorra: ${{ahorro}}</h5></td>
+          <td><h5>Ahorra: ${{machine.precio - machine.precioDescuento}}</h5></td>
         </tr>
         <tr>
           <td><h5>Precio actual: ${{machine.precioDescuento}}</h5></td>
@@ -69,22 +69,24 @@
   </div>
 </div>
 <footer class="footer">
-  <div class="container row clearfix" id="contact">
-    <div class="col-md-12 column">
-      <p>
-        <a href="mailto:feedback@rumboteca.com">feedback@maquirent.com</a>
-      </p>
-      <ul class="list-inline banner-social-buttons">
-        <li>
-          <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-        </li>
-        <li>
-          <a href="https://github.com/IronSummitMedia/rumboteca" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-        </li>
-        <li>
-          <a href="https://plus.google.com/+rumboteca/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-        </li>
-      </ul>
+  <div class="container">
+    <div class="row clearfix" id="contact">
+      <div class="col-md-12 column">
+        <p>
+          <a href="mailto:feedback@rumboteca.com">feedback@maquirent.com</a>
+        </p>
+        <ul class="list-inline banner-social-buttons">
+          <li>
+            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+          </li>
+          <li>
+            <a href="https://github.com/IronSummitMedia/rumboteca" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/+rumboteca/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   </div>

@@ -7,11 +7,10 @@ angular.module('peticionesApp')
 
     $http.get('http://localhost:8080/maquinaria/maquinas/listAPIid?id='+$scope.id).success(function(data) {
       $scope.listAPIid = data;
-      $scope.ahorro = data.precio - data.precioDescuento;
     });
 
     $scope.delete = function(){
-      $http.delete('http://localhost:8080/maquinaria/maquinas/deleteId?id='+$scope.id).success(function(data) {
+      $http.get('http://localhost:8080/maquinaria/maquinas/deleteId?id='+$scope.id).success(function(data) {
         if(data.status == 'success'){
           $scope.success = true;
         }else{

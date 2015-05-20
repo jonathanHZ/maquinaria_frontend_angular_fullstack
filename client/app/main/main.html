@@ -9,9 +9,18 @@
       <div class="col-md-8">
         <h1 class="header text-center">MAQUIRENT</h1>
       </div>
+      <div class="col-md-2">
+        <div class="input-group vertical-center"  ng-controller="ModalDemoCtrl">
+          <input type="text" class="form-control" ng-model="inputData" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="glyphicon glyphicon-search btn btn-default" type="button" ng-click="getMaquinasData(inputData)"></button>
+            </span>
+        </div>
+      </div>
     </div>
   </div>
 </header>
+
 
 <div class="container">
   <div class="row clearfix">
@@ -44,23 +53,60 @@
 </div>
 
 <footer class="footer">
-  <div class="container row clearfix" id="contact">
-    <div class="col-md-12 column">
-      <p>
-        <a href="mailto:feedback@rumboteca.com">feedback@maquirent.com</a>
-      </p>
-      <ul class="list-inline banner-social-buttons">
-        <li>
-          <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-        </li>
-        <li>
-          <a href="https://github.com/IronSummitMedia/rumboteca" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-        </li>
-        <li>
-          <a href="https://plus.google.com/+rumboteca/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-        </li>
-      </ul>
+  <div class="container">
+    <div class="row clearfix" id="contact">
+      <div class="col-md-12 column">
+        <p>
+          <a href="mailto:feedback@rumboteca.com">feedback@maquirent.com</a>
+        </p>
+        <ul class="list-inline banner-social-buttons">
+          <li>
+            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+          </li>
+          <li>
+            <a href="https://github.com/IronSummitMedia/rumboteca" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/+rumboteca/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+   </div>
 </div>
 </footer>
+<div ng-controller="ModalDemoCtrl">
+  <script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+      <h3 class="modal-title">Resultado de la Búsqueda</h3>
+    </div>
+    <div class="modal-body" ng-app="ModalDemoCtrl">
+      <div class="row clearfix thumbnail" ng-repeat="machine in items">
+        <div class="col-md-3 column">
+          <img class="col-md-12" src="{{machine.imagen}}" class="img-rounded">
+        </div>
+        <div class="col-md-6 column vertical-center">
+          <table class="table table-hover table-condensed  text-info vertical-center">
+            <tr class="active warning">
+              <td><h4>{{machine.nombre}}</h4></td>
+            </tr>
+            <tr>
+              <td><h5>Precio: ${{machine.precioDescuento}}</h5></td>
+            </tr>
+            <tr>
+              <td><h6>Disponible: {{machine.disponibilidad}}</h6></td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-3 column">
+          <a type="button" class="btn btn-warning btn-block" href="/details" ng-click="sendId2(machine.idmaquina)">Ver-Detalle</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="ok()">Aceptar</button>
+    </div>
+  </script>
+
+</div>
