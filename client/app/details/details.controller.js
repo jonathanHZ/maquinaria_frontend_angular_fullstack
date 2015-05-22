@@ -3,6 +3,7 @@
 angular.module('peticionesApp')
   .controller('DetailsCtrl', function ($scope, $http, myService) {
     $scope.id = myService.getId();
+    console.log($scope.id);
     $scope.ahorro = 0;
 
     $http.get('http://localhost:8080/maquinaria/maquinas/listAPIid?id='+$scope.id).success(function(data) {

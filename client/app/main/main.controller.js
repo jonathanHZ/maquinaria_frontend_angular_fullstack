@@ -13,8 +13,10 @@ angular.module('peticionesApp')
     });
 
     $scope.sendId = function(id){
+      console.log(id);
       myService.addId(id);
     }
+
 
   });
 
@@ -27,7 +29,7 @@ angular.module('peticionesApp').controller('ModalDemoCtrl', function ($scope, $m
 
   $scope.animationsEnabled = true;
 
-  $scope.open = function (size) {
+  $scope.open = function (size,id) {
 
     var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
@@ -55,11 +57,6 @@ angular.module('peticionesApp').controller('ModalDemoCtrl', function ($scope, $m
     });
   }
 
-  $scope.sendId2 = function(id){
-    console(id);
-    myService.addId(id);
-  }
-
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
   };
@@ -84,3 +81,5 @@ angular.module('peticionesApp').controller('ModalInstanceCtrl', function ($scope
     $modalInstance.dismiss('cancel');
   };
 });
+
+
